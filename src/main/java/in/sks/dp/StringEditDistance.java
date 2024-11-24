@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// https://www.geeksforgeeks.org/edit-distance-dp-5/
+// https://cses.fi/problemset/task/1639/
 public class StringEditDistance {
     public static void main(String[] args) {
         // Get the resource file using ClassLoader
@@ -76,7 +78,7 @@ public class StringEditDistance {
                 s1i++;
                 s2i++;
                 continue;
-            };
+            }
 
             if (s1List.get(s1i) > s2List.get(s2i)) {
                 add++;
@@ -100,6 +102,6 @@ public class StringEditDistance {
             }
         }
 
-        return add + remove + replace;
+        return add + remove + replace + Math.abs(s1i - s2i);
     }
 }
